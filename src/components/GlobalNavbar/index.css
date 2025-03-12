@@ -1,0 +1,130 @@
+/* Desktop Navbar */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #333;
+  padding: 10px;
+  height: 60px;
+}
+
+.h1 {
+  color: rgb(217, 255, 246);
+  padding-left: 10px;
+}
+
+.menu-button {
+  display: none;
+  font-size: 24px;
+  background: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  padding: 5px 10px;
+}
+
+.active-tab {
+  border-bottom: 2px solid red;
+}
+
+/* Search Container */
+.search-container {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 5px;
+  border-radius: 25px;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+input {
+  border: none;
+  outline: none;
+  padding: 10px;
+  width: 200px;
+  font-size: 12px;
+  border-radius: 25px;
+  transition: width 0.4s ease-in-out;
+}
+
+input:focus {
+  width: 250px;
+}
+
+button {
+  padding: 5px 10px;
+  font-size: 14px;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: scale(1.1);
+}
+
+.search-button {
+  border-radius: 50%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .menu-button {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  /* Hide search bar on mobile */
+  .search-container {
+    display: none;
+  }
+}
+/* Search Button in Navbar */
+.search-toggle-button {
+  background: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* Position Search Bar Below Navbar */
+.search-container {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 5px;
+  border-radius: 25px;
+  transition: box-shadow 0.3s ease-in-out;
+  margin-top: 10px;
+  justify-content: center;
+}

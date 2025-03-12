@@ -1,0 +1,115 @@
+/* Container for the entire page */
+.container {
+  max-width: 1200px; /* Limit max width for better readability */
+  margin: 0 auto; /* Center the container */
+  padding: 20px; /* Add padding for spacing */
+}
+
+/* Movie List (Wrapper for the items) */
+.row {
+  list-style: none; /* Remove default list bullets */
+  padding: 0; /* Remove default padding */
+  margin: 0 -10px 20px; /* Negative margin to compensate for item padding */
+}
+
+/* Individual movie item */
+.col-6,
+.col-md-3 {
+  padding: 0 10px; /* Add padding to create gap effect */
+  margin-bottom: 20px; /* Adjusted gap between rows */
+  box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .col-md-3 {
+    flex: 0 0 calc(25% - 20px); /* 4 columns for md and up, accounting for padding */
+    max-width: calc(25% - 20px);
+  }
+}
+
+@media (max-width: 767px) {
+  .col-6 {
+    flex: 0 0 calc(50% - 20px); /* 2 columns for sm and down */
+    max-width: calc(50% - 20px);
+  }
+}
+
+/* Movie Card (Link wrapper) */
+Link {
+  text-decoration: none; /* Ensure no underline from Link */
+  display: block; /* Make the link a block element */
+}
+
+li {
+  background: #fff; /* White background for cards */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  overflow: hidden; /* Ensure image doesn't overflow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+}
+
+li:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+/* Movie Image */
+.img-fluid {
+  width: 100%; /* Full width of the item */
+  height: 300px; /* Fixed height for consistency */
+  object-fit: cover; /* Ensure image fits without distortion */
+  display: block; /* Remove any inline spacing */
+}
+
+/* Movie Title */
+h5 {
+  font-size: 16px; /* Adjusted font size */
+  font-weight: bold; /* Bold for emphasis */
+  color: #333; /* Dark text for contrast */
+  margin: 10px 15px 5px; /* Spacing around the title */
+  text-align: center; /* Center the title */
+  padding: 0; /* Remove default padding */
+}
+
+/* Movie Rating */
+p {
+  font-size: 14px; /* Smaller font for rating */
+  color: #777; /* Lighter gray for contrast */
+  margin: 0 15px 10px; /* Spacing */
+  text-align: center; /* Center the rating */
+  padding: 0; /* Remove default padding */
+}
+
+/* View Details Button */
+.movie-button {
+  display: block; /* Full-width button */
+  width: 80%; /* Slightly smaller than item width */
+  margin: 0 auto 15px; /* Center and add bottom margin */
+  padding: 8px 15px; /* Adjusted padding */
+  font-size: 14px; /* Consistent font size */
+  background-color: #333; /* Dark background */
+  color: #fff; /* White text */
+  border: none; /* No border */
+  border-radius: 5px; /* Slight rounding */
+  cursor: pointer; /* Pointer on hover */
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth animations */
+}
+
+.movie-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: scale(1.05); /* Slight enlargement on hover */
+}
+
+/* Loader Container */
+.loader-container {
+  display: flex;
+  justify-content: center; /* Center the loader */
+  align-items: center; /* Center vertically */
+  height: 50vh; /* Take up some vertical space */
+}
+
+/* Pagination (if needed, align with existing design) */
+.mb-3 {
+  margin-bottom: 1rem !important; /* Maintain Bootstrap spacing */
+}
