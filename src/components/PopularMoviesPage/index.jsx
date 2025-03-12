@@ -26,7 +26,7 @@ const PopularMoviesPage = () => {
   });
 
   const getPopularMoviesResponse = async (page = 1) => {
-    const API_KEY = import.meta.env.VITE_TMDB_API_KEY; // Use Vite's env variable syntax
+    const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
     const apiUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=${page}`;
 
     try {
@@ -48,7 +48,14 @@ const PopularMoviesPage = () => {
 
   const renderLoadingView = () => (
     <div className="loader-container">
-      <TailSpin color="#032541" height={50} width={50} />
+      <TailSpin
+        height="50"
+        width="50"
+        color="#032541"
+        ariaLabel="tail-spin-loading"
+        radius="1"
+        visible={true}
+      />
     </div>
   );
 
@@ -56,9 +63,9 @@ const PopularMoviesPage = () => {
     const { results } = popularMovieResponse;
 
     return (
-      <ul className="row p-0 ms-0 me-0 mt-3">
+      <ul className="row">
         {results.map((movie) => (
-          <li key={movie.id} className="col-6 col-md-3 mb-3">
+          <li key={movie.id}>
             <Link to={`/movie/${movie.id}`} style={{ textDecoration: "none" }}>
               <img
                 src={movie.posterPath}
